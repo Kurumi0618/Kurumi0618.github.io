@@ -1,0 +1,1454 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>わたしの大切なものがたり</title>
+
+
+<style>
+
+/* =================================================
+   基本
+================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  color: #493832;
+
+  font-family:
+    "Yu Gothic",
+    "Hiragino Kaku Gothic ProN",
+    sans-serif;
+
+  /* 絵本の紙 */
+
+  background-color: #fff8e9;
+
+  background-image:
+
+    radial-gradient(
+      #f4d7c8 0.7px,
+      transparent 0.7px
+    );
+
+  background-size: 15px 15px;
+
+}
+
+
+/* =================================================
+   全体
+================================================= */
+
+.wrapper {
+
+  max-width: 1050px;
+
+  margin: auto;
+
+  padding: 30px 25px 80px;
+}
+
+
+/* =================================================
+   絵本の表紙
+================================================= */
+
+.cover {
+
+  position: relative;
+
+  min-height: 600px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 60px 30px;
+
+  background:
+
+    #fffaf0;
+
+  border:
+
+    3px solid #4e3932;
+
+  border-radius: 10px;
+
+  box-shadow:
+
+    8px 8px 0 #f0b5bd,
+
+    16px 16px 0 #b8d8d2;
+
+  overflow: hidden;
+}
+
+
+/* 四隅の飾り */
+
+.cover::before {
+
+  content: "✿";
+
+  position: absolute;
+
+  top: 25px;
+  left: 30px;
+
+  font-size: 30px;
+
+  color: #ef8f9e;
+}
+
+.cover::after {
+
+  content: "✿";
+
+  position: absolute;
+
+  bottom: 25px;
+  right: 30px;
+
+  font-size: 30px;
+
+  color: #ef8f9e;
+}
+
+
+/* =================================================
+   小さなタイトル
+================================================= */
+
+.cover-small {
+
+  font-size: 14px;
+
+  letter-spacing: 4px;
+
+  color: #d56c7c;
+
+  margin-bottom: 25px;
+}
+
+
+/* =================================================
+   メインタイトル
+================================================= */
+
+.cover h1 {
+
+  margin: 0;
+
+  font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+  font-size:
+    clamp(45px, 8vw, 78px);
+
+  font-weight: normal;
+
+  color: #49352f;
+
+  line-height: 1.4;
+}
+
+
+/* =================================================
+   タイトル下
+================================================= */
+
+.cover-subtitle {
+
+  margin-top: 20px;
+
+  font-size: 15px;
+
+  line-height: 2;
+
+  color: #80645a;
+}
+
+
+/* =================================================
+   絵本のイラスト風
+================================================= */
+
+.cover-picture {
+
+  margin: 35px 0;
+
+  width: 180px;
+
+  height: 120px;
+
+  position: relative;
+}
+
+
+/* 雲 */
+
+.cloud {
+
+  position: absolute;
+
+  width: 130px;
+
+  height: 45px;
+
+  background: #dceef0;
+
+  border-radius: 50px;
+
+  bottom: 10px;
+
+  left: 25px;
+}
+
+.cloud::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: #dceef0;
+
+  left: 20px;
+
+  top: -25px;
+}
+
+.cloud::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  background: #dceef0;
+
+  right: 15px;
+
+  top: -32px;
+}
+
+
+/* 星 */
+
+.star {
+
+  position: absolute;
+
+  color: #e8b64f;
+
+  font-size: 28px;
+}
+
+.star.one {
+  top: 0;
+  left: 10px;
+}
+
+.star.two {
+  top: 20px;
+  right: 5px;
+}
+
+.star.three {
+  bottom: 15px;
+  right: 35px;
+}
+
+
+/* =================================================
+   ページめくり風
+================================================= */
+
+.page-title {
+
+  text-align: center;
+
+  margin: 110px 0 45px;
+}
+
+.page-title .chapter {
+
+  color: #d77987;
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 10px;
+}
+
+.page-title h2 {
+
+  display: inline-block;
+
+  margin: 0;
+
+  font-family:
+    "Yu Mincho",
+    serif;
+
+  font-size: 35px;
+
+  font-weight: normal;
+
+  color: #49352f;
+
+  position: relative;
+}
+
+
+/* 下線 */
+
+.page-title h2::after {
+
+  content: "";
+
+  position: absolute;
+
+  bottom: -15px;
+
+  left: 10%;
+
+  width: 80%;
+
+  height: 8px;
+
+  background: #f5c4ca;
+
+  border-radius: 50%;
+}
+
+
+/* =================================================
+   ものがたり導入
+================================================= */
+
+.story-box {
+
+  max-width: 760px;
+
+  margin: auto;
+
+  padding: 45px 55px;
+
+  background: #fffdf6;
+
+  border: 2px solid #e2c8ae;
+
+  border-radius: 8px;
+
+  box-shadow: 5px 5px 0 #eadfd2;
+
+  font-size: 15px;
+
+  line-height: 2.4;
+
+  text-align: center;
+
+  position: relative;
+}
+
+
+/* テープ */
+
+.story-box::before {
+
+  content: "✿";
+
+  position: absolute;
+
+  top: -18px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 45px;
+
+  height: 35px;
+
+  background: #f4b7c0;
+
+  color: white;
+
+  line-height: 35px;
+
+  transform:
+    translateX(-50%)
+    rotate(-3deg);
+}
+
+
+/* =================================================
+   推し紹介
+================================================= */
+
+.oshis {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 40px;
+}
+
+
+/* =================================================
+   絵本のページ
+================================================= */
+
+.book-page {
+
+  position: relative;
+
+  background: #fffdf7;
+
+  padding: 25px;
+
+  border: 2px solid #574139;
+
+  border-radius: 5px;
+
+  box-shadow:
+    7px 7px 0 #e7c3c0;
+
+  transition: .3s;
+}
+
+
+.book-page:hover {
+
+  transform:
+    translateY(-7px)
+    rotate(-1deg);
+
+  box-shadow:
+    10px 12px 0 #e7c3c0;
+}
+
+
+/* =================================================
+   ページ番号
+================================================= */
+
+.page-number {
+
+  position: absolute;
+
+  top: 15px;
+
+  right: 18px;
+
+  font-family: Georgia, serif;
+
+  font-size: 12px;
+
+  color: #b38d82;
+}
+
+
+/* =================================================
+   写真
+================================================= */
+
+.photo {
+
+  height: 280px;
+
+  border:
+
+    2px solid
+    #d99aa4;
+
+  background: #fdf2e7;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  color: #b78e86;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  line-height: 2;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/*
+ ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+ ここに写真を入れる！
+
+ 例えば、
+
+ <img
+   src="hokuto.jpg"
+   class="real-photo"
+   alt="松村北斗">
+
+ に変更する。
+
+ ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+*/
+
+
+.real-photo {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =================================================
+   名前
+================================================= */
+
+.person-number {
+
+  margin-top: 25px;
+
+  color: #d06e7c;
+
+  font-family: Georgia, serif;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+}
+
+
+.person-name {
+
+  margin: 7px 0;
+
+  font-family:
+    "Yu Mincho",
+    serif;
+
+  font-size: 32px;
+
+  font-weight: normal;
+
+  color: #49352f;
+}
+
+
+.person-name-en {
+
+  color: #aa8b83;
+
+  font-family: Georgia, serif;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+}
+
+
+/* =================================================
+   花の区切り
+================================================= */
+
+.flower {
+
+  text-align: center;
+
+  margin: 20px 0;
+
+  color: #df8190;
+
+  letter-spacing: 8px;
+}
+
+
+/* =================================================
+   紹介文
+================================================= */
+
+.profile {
+
+  font-size: 14px;
+
+  line-height: 2.2;
+
+  color: #624d45;
+}
+
+
+/* =================================================
+   好きなところ
+================================================= */
+
+.love-box {
+
+  margin-top: 25px;
+
+  padding: 20px;
+
+  background: #fff0f1;
+
+  border-radius: 15px;
+
+  border: 1px dashed #d9959f;
+}
+
+
+.love-title {
+
+  color: #d26879;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+}
+
+
+.love-box p {
+
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 2;
+
+}
+
+
+/* =================================================
+   好きな作品
+================================================= */
+
+.work-box {
+
+  margin-top: 18px;
+
+  padding: 18px;
+
+  background: #edf6f3;
+
+  border-radius: 15px;
+
+  border: 1px dashed #9abdb5;
+}
+
+
+.work-title {
+
+  color: #69958c;
+
+  font-family: Georgia, serif;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 8px;
+}
+
+
+.work-box p {
+
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 2;
+}
+
+
+/* =================================================
+   リンク
+================================================= */
+
+.more {
+
+  display: block;
+
+  width: fit-content;
+
+  margin: 25px auto 5px;
+
+  padding: 9px 25px;
+
+  color: #fff;
+
+  background: #d87585;
+
+  text-decoration: none;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+
+  transition: .3s;
+}
+
+
+.more:hover {
+
+  background: #b95366;
+
+  transform: scale(1.05);
+}
+
+
+/* =================================================
+   最後のページ
+================================================= */
+
+.last-page {
+
+  margin-top: 110px;
+
+  padding: 65px 30px;
+
+  text-align: center;
+
+  background: #fffdf5;
+
+  border: 2px solid #574139;
+
+  box-shadow:
+    8px 8px 0 #b9d5d1;
+
+  position: relative;
+}
+
+
+.last-page h2 {
+
+  margin: 0 0 25px;
+
+  font-family:
+    "Yu Mincho",
+    serif;
+
+  font-size: 32px;
+
+  font-weight: normal;
+}
+
+
+.last-page p {
+
+  max-width: 600px;
+
+  margin: auto;
+
+  color: #665049;
+
+  line-height: 2.4;
+
+  font-size: 14px;
+}
+
+
+/* =================================================
+   しおり
+================================================= */
+
+.bookmark {
+
+  width: 45px;
+
+  height: 80px;
+
+  background: #ed8fa0;
+
+  position: absolute;
+
+  right: 40px;
+
+  top: -10px;
+
+  color: white;
+
+  padding-top: 15px;
+
+  font-size: 20px;
+}
+
+
+/* =================================================
+   フッター
+================================================= */
+
+footer {
+
+  text-align: center;
+
+  padding: 60px 20px 20px;
+
+  color: #9a7d74;
+
+  font-family: Georgia, serif;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+}
+
+
+/* =================================================
+   スマホ
+================================================= */
+
+@media (max-width: 750px) {
+
+  .wrapper {
+
+    padding:
+      20px 15px 60px;
+  }
+
+  .cover {
+
+    min-height: 520px;
+
+    box-shadow:
+      5px 5px 0 #f0b5bd,
+      10px 10px 0 #b8d8d2;
+  }
+
+  .oshis {
+
+    grid-template-columns: 1fr;
+  }
+
+  .story-box {
+
+    padding:
+      35px 25px;
+  }
+
+  .book-page {
+
+    padding: 20px;
+  }
+
+  .last-page {
+
+    padding:
+      50px 20px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="wrapper">
+
+
+<!-- =================================================
+     📖 表紙
+================================================= -->
+
+<section class="cover">
+
+
+  <div class="cover-small">
+
+    ✿ MY LITTLE BOOK ✿
+
+  </div>
+
+
+  <h1>
+
+    わたしの<br>
+    だいすきな人たち
+
+  </h1>
+
+
+  <div class="cover-picture">
+
+    <div class="star one">✦</div>
+
+    <div class="star two">✧</div>
+
+    <div class="star three">✦</div>
+
+    <div class="cloud"></div>
+
+  </div>
+
+
+  <div class="cover-subtitle">
+
+    ふたりの王子さまと<br>
+    私だけの小さなものがたり
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =================================================
+     📖 第一章
+================================================= -->
+
+<section class="page-title">
+
+  <div class="chapter">
+
+    CHAPTER 1
+
+  </div>
+
+
+  <h2>
+
+    はじまりのおはなし
+
+  </h2>
+
+</section>
+
+
+
+<section class="story-box">
+
+
+  <!--
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+    ここを書き換える！
+
+    「どうしてこの2人を好きになったのか」
+    「このサイトを作った理由」などを書く。
+
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★
+  -->
+
+
+  <p>
+
+    むかしむかし――。
+
+    といっても、
+    そんなに昔のお話ではありません。
+
+    私には、毎日を少しだけ
+    楽しくしてくれる人がふたりいます。
+
+    <br><br>
+
+    そのふたりの名前は、
+    <strong>松村北斗くん</strong>と
+    <strong>道枝駿佑くん</strong>。
+
+    <br><br>
+
+    ここからは、
+    私の大好きなふたりのお話です。
+
+  </p>
+
+
+</section>
+
+
+
+<!-- =================================================
+     📖 第二章
+================================================= -->
+
+<section class="page-title">
+
+  <div class="chapter">
+
+    CHAPTER 2
+
+  </div>
+
+
+  <h2>
+
+    ひとりめの王子さま
+
+  </h2>
+
+</section>
+
+
+
+<section class="oshis">
+
+
+
+<!-- =================================================
+     🖤 松村北斗
+================================================= -->
+
+<div class="book-page">
+
+
+  <div class="page-number">
+
+    page 01
+
+  </div>
+
+
+  <!-- ★★★ 写真を入れる場所 ★★★ -->
+
+  <div class="photo">
+
+    ✿<br><br>
+
+    松村北斗くんの写真<br>
+
+    <small>
+      PHOTO HERE
+    </small>
+
+    <br><br>
+
+    ✿
+
+  </div>
+
+
+  <div class="person-number">
+
+    ✦ THE FIRST STAR ✦
+
+  </div>
+
+
+  <h3 class="person-name">
+
+    松村北斗
+
+  </h3>
+
+
+  <div class="person-name-en">
+
+    HOKUTO MATSUMURA
+
+  </div>
+
+
+  <div class="flower">
+
+    ❀ ✿ ❀
+
+  </div>
+
+
+  <!--
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+    北斗くんの紹介を書く場所
+
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★
+  -->
+
+  <p class="profile">
+
+    SixTONESのメンバーとして活動している
+    松村北斗くん。
+
+    <br><br>
+
+    俳優としても活躍していて、
+    作品によってさまざまな表情を
+    見せてくれます。
+
+  </p>
+
+
+  <!-- 好きなところ -->
+
+  <div class="love-box">
+
+    <div class="love-title">
+
+      ♡ すきなところ
+
+    </div>
+
+
+    <!-- ★★★ ここを書き換える ★★★ -->
+
+    <p>
+
+      落ち着いた雰囲気と、
+      独特な言葉選びが好き。
+
+      <br>
+
+      クールに見えるけれど、
+      ふとしたときに見せる
+      おちゃめなところも素敵です。
+
+    </p>
+
+  </div>
+
+
+  <!-- 好きな作品 -->
+
+  <div class="work-box">
+
+    <div class="work-title">
+
+      ✿ お気に入り
+
+    </div>
+
+
+    <!-- ★★★ ここを書き換える ★★★ -->
+
+    <p>
+
+      好きな作品：
+      「ここに作品名を書く」
+
+      <br>
+
+      好きな曲：
+      「ここに曲名を書く」
+
+    </p>
+
+  </div>
+
+
+  <!-- リンク -->
+
+  <a
+    href=""
+    target="_blank"
+    class="more"
+  >
+
+    もっと見る ✿
+
+  </a>
+
+
+</div>
+
+
+
+<!-- =================================================
+     💗 道枝駿佑
+================================================= -->
+
+<div class="book-page">
+
+
+  <div class="page-number">
+
+    page 02
+
+  </div>
+
+
+  <!-- ★★★ 写真を入れる場所 ★★★ -->
+
+  <div class="photo">
+
+    ✿<br><br>
+
+    道枝駿佑くんの写真<br>
+
+    <small>
+      PHOTO HERE
+    </small>
+
+    <br><br>
+
+    ✿
+
+  </div>
+
+
+  <div class="person-number">
+
+    ✦ THE SECOND STAR ✦
+
+  </div>
+
+
+  <h3 class="person-name">
+
+    道枝駿佑
+
+  </h3>
+
+
+  <div class="person-name-en">
+
+    SHUNSUKE MICHIEDA
+
+  </div>
+
+
+  <div class="flower">
+
+    ❀ ✿ ❀
+
+  </div>
+
+
+  <!--
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+    道枝くんの紹介を書く場所
+
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★
+  -->
+
+  <p class="profile">
+
+    なにわ男子のメンバーとして活動している
+    道枝駿佑くん。
+
+    <br><br>
+
+    アイドルとしてだけではなく、
+    俳優としてもさまざまな作品に
+    出演しています。
+
+  </p>
+
+
+  <!-- 好きなところ -->
+
+  <div class="love-box">
+
+    <div class="love-title">
+
+      ♡ すきなところ
+
+    </div>
+
+
+    <!-- ★★★ ここを書き換える ★★★ -->
+
+    <p>
+
+      透明感のある雰囲気と、
+      優しい笑顔が大好き。
+
+      <br>
+
+      かっこいいだけではなく、
+      ふわっとした可愛らしさも
+      魅力だと思います。
+
+    </p>
+
+  </div>
+
+
+  <!-- 好きな作品 -->
+
+  <div class="work-box">
+
+    <div class="work-title">
+
+      ✿ お気に入り
+
+    </div>
+
+
+    <!-- ★★★ ここを書き換える ★★★ -->
+
+    <p>
+
+      好きな作品：
+      「ここに作品名を書く」
+
+      <br>
+
+      好きな曲：
+      「ここに曲名を書く」
+
+    </p>
+
+  </div>
+
+
+  <a
+    href=""
+    target="_blank"
+    class="more"
+  >
+
+    もっと見る ✿
+
+  </a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =================================================
+     📖 最後のページ
+================================================= -->
+
+<section class="page-title">
+
+  <div class="chapter">
+
+    THE LAST PAGE
+
+  </div>
+
+
+  <h2>
+
+    おしまいのおはなし
+
+  </h2>
+
+</section>
+
+
+
+<section class="last-page">
+
+
+  <div class="bookmark">
+
+    ♡
+
+  </div>
+
+
+  <!--
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+    最後のメッセージ
+
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★
+  -->
+
+
+  <h2>
+
+    そして、これからも。
+
+  </h2>
+
+
+  <p>
+
+    ふたりが届けてくれる
+    笑顔や言葉を大切にしながら、
+
+    <br>
+
+    これからもずっと、
+    ふたりのことを応援していきたい。
+
+    <br><br>
+
+    私の日常に
+    小さな魔法をかけてくれる、
+
+    <br>
+
+    大切なふたりです。
+
+    <br><br>
+
+    ❀ ✿ ❀
+
+  </p>
+
+
+</section>
+
+
+
+<footer>
+
+  ✿ THE END ✿
+
+  <br><br>
+
+  My Little Oshi Book
+
+</footer>
+
+
+</div>
+
+
+</body>
+
+</html>
+```
